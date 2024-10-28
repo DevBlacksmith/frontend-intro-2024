@@ -81,12 +81,18 @@ a:active {
 .card {
   display: flex;
   height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: clamp(1rem, 5vw, 3rem);
+  row-gap: 1rem;
+}
+.card__title {
+  margin-bottom: 3rem;
+  font-size: 4rem;
 }
 .card__title--welcome {
   align-self: center;
   font-size: 6rem;
-  margin-bottom: 3rem;
-  margin-left: clamp(1rem, 5vw, 3rem);
 }
 
 /*# sourceMappingURL=main.css.map */

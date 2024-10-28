@@ -77,7 +77,6 @@ a {
     margin: 2rem 10px;
     border-radius: var(--radius-2);
     padding: 2rem;
-    
     display: none;
     min-width: 100%;
     opacity: 0;
@@ -99,13 +98,16 @@ a {
 .card {
     display: flex;
     height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: clamp(1rem, 5vw, 3rem);;
+    row-gap: 1rem;
     &__title {       
+        margin-bottom: 3rem;
+        font-size: 4rem;
         &--welcome {
             align-self: center;
-            // text-align: center;
             font-size: 6rem;
-            margin-bottom: 3rem;
-            margin-left: clamp(1rem, 5vw, 3rem);
         }
     }
 }
