@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
     <title>Frontend intro</title>
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <nav>
             <!-- internal # links to slides -->
             <a href="#section-1">Velkommen!</a>
@@ -18,6 +18,11 @@
             <a href="#section-4">Frontend 101</a>
             <a href="#section-5">Færdigheder</a>
         </nav>
+        <!-- <label for="nav" class="header__toggle-button"></label> -->
+        <label for="nav" class="header__wrapper">
+            <input class="header__toggle-button" type="checkbox" name="nav-toggle" id="nav">
+        </label>
+
     </header>
     <main>
         <div class="slider">
@@ -67,6 +72,7 @@
                     <h2 class="card__title">
                         Færdigheder
                     </h2>
+
                     Fokuspunkter som ny udvikler:
                     <ul>
                         <li>Struktureret problemløsning</li>

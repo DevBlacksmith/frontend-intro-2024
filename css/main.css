@@ -9,15 +9,69 @@ body {
   grid-template-columns: minmax(var(--padding-inline), 1fr) min(100% - var(--padding-inline) * 2, var(--content-max-width)) minmax(var(--padding-inline), 1fr);
   place-content: center;
   background-image: var(--gradient-23);
+  position: relative;
 }
-header {
+
+.header {
   padding-inline: 16px;
+  grid-column: 2;
+  position: fixed;
+  background-color: var(--stone-2);
+  top: 58px;
+  left: 58px;
+  display: flex;
+  color: initial;
+  padding: 0;
+}
+@media (min-width: 1980px) {
+  .header {
+    grid-column: 1;
+    color: white;
+  }
+}
+.header__wrapper {
+  width: 42px;
+  height: 42px;
+  padding: 8px;
+  top: -14px;
+  left: -14px;
+  position: absolute;
+  background-color: inherit;
+  border-radius: 100vw;
+  box-shadow: var(--shadow-4);
+}
+.header__wrapper::before {
+  content: "";
+  background-size: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.header__wrapper:has(:not(input:checked))::before {
+  background-image: url("../assets/menu.svg");
+}
+.header__wrapper:has(input:checked) {
+  box-shadow: var(--shadow-2);
+}
+.header__wrapper:has(input:checked)::before {
+  background-image: url("../assets/close.svg");
+}
+.header__toggle-button {
+  position: absolute;
+  left: 100vw;
 }
 
 nav {
-  display: flex;
+  margin-top: auto;
+  display: none;
   flex-direction: column;
   gap: 1rem;
+  padding: 2rem;
+  color: var(--gray-12);
+  box-shadow: var(--shadow-4);
+}
+nav:has(~ label > input:checked) {
+  display: flex;
 }
 
 main {
@@ -43,9 +97,10 @@ a:active {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: hidden;
-  padding: 2rem;
+  padding: clamp(1rem, 2vw, 2rem);
   column-gap: 5rem;
   scroll-snap-type: x mandatory;
+  max-height: 100dvh;
 }
 .slider:has(:not(.slide:target)):first-of-type {
   display: block;
@@ -56,10 +111,10 @@ a:active {
   background-color: var(--stone-11);
   scroll-snap-align: center;
   grid-column: auto;
-  aspect-ratio: 16/9;
+  aspect-ratio: 3/4;
   min-width: calc(100% - 2rem);
   box-shadow: var(--shadow-4);
-  margin: 2rem 10px;
+  margin: 2rem 0;
   border-radius: var(--radius-2);
   padding: 2rem;
   display: none;
@@ -77,22 +132,28 @@ a:active {
   display: block;
   opacity: 1;
 }
+@media (min-width: 768px) {
+  .slide {
+    aspect-ratio: 16/9;
+  }
+}
 
 .card {
   display: flex;
   height: 100%;
+  overflow-y: auto;
   flex-direction: column;
   justify-content: center;
   padding-left: clamp(1rem, 5vw, 3rem);
   row-gap: 1rem;
+  word-wrap: break-word;
 }
 .card__title {
-  margin-bottom: 3rem;
   font-size: 4rem;
 }
 .card__title--welcome {
   align-self: center;
-  font-size: 6rem;
+  font-size: clamp(1rem, 5vw, 6rem);
 }
 
 /*# sourceMappingURL=main.css.map */
