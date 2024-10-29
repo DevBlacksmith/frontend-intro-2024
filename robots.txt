@@ -1,0 +1,11 @@
+User-agent: ChatGPTBot
+Disallow: /
+
+User-agent: BingPreview
+Disallow: /
+
+User-agent: Googlebot-Image
+Disallow: /
+
+User-agent: *
+Disallow: /
