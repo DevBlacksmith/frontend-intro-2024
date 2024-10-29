@@ -137,6 +137,7 @@ a:active {
   padding-left: clamp(1rem, 5vw, 3rem);
   row-gap: 1rem;
   word-wrap: break-word;
+  color: white;
 }
 .card__title {
   font-size: 4rem;
